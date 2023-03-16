@@ -1,0 +1,14 @@
+<div id="<%= dom_id post %>">
+
+    <td><%= post.name %></td>
+
+  
+    <td><%= post.description %></td>
+
+  <%if post.avatar.attached?%>
+        <td><%= post.avatar.filename %></td>
+    <%else%>
+        <td>No Attachments Available</td>
+    <%end%>
+
+</div>

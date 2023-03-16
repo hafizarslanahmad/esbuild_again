@@ -1,0 +1,27 @@
+<h1>Editing post</h1>
+
+
+<div id="ruby12">
+  <%= turbo_frame_tag "frame_modal" do %>
+    <div class="modal" id="company-modal" tabindex="-1" 
+      aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-controller="turbo-modal" data-action="keyup@document->turbo-modal#escClose">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" data-controller="modal-toggler" data-modal="company-modal">
+          <button type="button" class="close border-0 p-1 ms-auto mt-1 me-2 text-dark" data-dismiss="modal" aria-label="Close" data-action="turbo-modal#close">
+            <span aria-hidden="true"><i class="fas fa-close"></i></span>
+          </button>
+          <div class="modal-body" data-controller="modal-toggler" data-modal='company-modal'>
+            <h4>Edit Post</h4>
+            <%= render "form", post: @post %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<div>
+  <%= link_to "Show this post", @post %> |
+  <%= link_to "Back to posts", posts_path %>
+</div>

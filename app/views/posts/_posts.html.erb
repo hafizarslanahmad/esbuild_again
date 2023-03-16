@@ -1,0 +1,33 @@
+<div id="puts">
+
+ 
+<h1>Posts</h1>
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">image_name</th>
+      <th scope="col">Action</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+    <div id="posts">
+      <% posts.each do |post| %>
+    </div>
+        <tbody>
+            <tr>
+              <%= render post%>
+               <td>
+                 <a data-turbo="true" data-turbo-frame="frame_modal" class="btn btn-primary" href="<%= edit_post_path(post) %>">Edit</a>
+                 
+               </td>
+               <td>
+                 <%= button_to "Delete", post, method: :delete, class: "btn btn-danger" %>
+               </td>
+            </tr>
+        </tbody>
+      <% end %>
+        
+ </table>
+</div>
